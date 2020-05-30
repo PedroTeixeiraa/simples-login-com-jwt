@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UsuarioMapper {
 
-    public static Usuario transformar(UsuarioRequest usuarioRequest){
+    public static Usuario transformarUsuario(UsuarioRequest usuarioRequest){
 
         Usuario usuario = new Usuario();
         usuario.setNomeCompleto(usuarioRequest.getNomeCompleto());
@@ -20,7 +20,7 @@ public class UsuarioMapper {
         return usuario;
     }
 
-    public static UsuarioResponse transformar(Usuario usuario){
+    public static UsuarioResponse transformarUsuarioResponse(Usuario usuario){
 
         UsuarioResponse usuarioResponse = new UsuarioResponse();
         usuarioResponse.setNomeCompleto(usuario.getNomeCompleto());

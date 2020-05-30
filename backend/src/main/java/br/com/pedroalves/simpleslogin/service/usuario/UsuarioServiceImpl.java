@@ -24,7 +24,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     @Override
     public void cadastrar(UsuarioRequest usuarioRequest) {
 
-        Usuario usuario = UsuarioMapper.transformar(usuarioRequest);
+        Usuario usuario = UsuarioMapper.transformarUsuario(usuarioRequest);
         usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
 
         usuarioRepository.save(usuario);
@@ -32,13 +32,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public UsuarioResponse buscarDadosDoUsuarioLogado(Long id) {
-
         Optional<Usuario> usuario = usuarioRepository.findById(id);
 
         if(!usuario.isPresent()) {
             throw new RuntimeException("Usuário não encontrado");
         }
 
-        return UsuarioMapper.transformar(usuario.get());
+        return UsuarioMapper.transformarUsuarioResponse(usuario.get());
     }
 }

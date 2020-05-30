@@ -2,6 +2,7 @@ package br.com.pedroalves.simpleslogin.controller.usuario.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -11,6 +12,7 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Data
+@Builder
 public class UsuarioRequest {
 
     @Size(max = 100)
