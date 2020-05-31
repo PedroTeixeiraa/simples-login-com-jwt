@@ -1,4 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: versao1/versao1.yml
-      relativeToChangelogFile: true
